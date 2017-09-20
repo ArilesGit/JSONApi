@@ -29,6 +29,7 @@ android {
 
 dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.0'
+    compile 'joda-time:joda-time:2.9.7'
 }
 
 //  ./gradlew clean build generateRelease

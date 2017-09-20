@@ -14,6 +14,7 @@ import com.gustavofao.jsonapi.Models.JSONList;
 import com.gustavofao.jsonapi.Models.Links;
 import com.gustavofao.jsonapi.Models.Resource;
 
+import org.joda.time.DateTime;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,6 +32,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+
+import static android.R.id.input;
 
 public class JSONApiConverter {
 
@@ -80,7 +83,7 @@ public class JSONApiConverter {
     }
 
     public Date parseDate(String date) throws ParseException {
-        return dateFormatFromServer.parse(date);
+        return new DateTime(date).toDate();
     }
 
     public String toJson(Resource resource) {
