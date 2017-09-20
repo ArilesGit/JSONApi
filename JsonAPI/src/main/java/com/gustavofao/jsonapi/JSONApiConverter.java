@@ -570,7 +570,7 @@ public class JSONApiConverter {
                         } else if (field.get(resource) instanceof String) {
                             attributes.put(fieldName, String.valueOf(field.get(resource)));
                         } else if (field.get(resource) instanceof Integer) {
-                            attributes.put(fieldName, field.getInt(resource));
+                            if(field.get(resource) != null) attributes.put(fieldName, field.getInt(resource));
                         } else if (field.get(resource) instanceof Double || field.get(resource) instanceof Float) {
                             attributes.put(fieldName, Double.valueOf(String.valueOf(field.get(resource))));
                         } else if (field.get(resource) instanceof Long) {
@@ -688,7 +688,7 @@ public class JSONApiConverter {
             } else if (field.get(resource) instanceof String) {
                 attributes.put(fieldName, String.valueOf(field.get(resource)));
             } else if (field.get(resource) instanceof Integer) {
-                attributes.put(fieldName, field.getInt(resource));
+                if(field.get(resource) != null) attributes.put(fieldName, field.getInt(resource));
             } else if (field.get(resource) instanceof Double || field.get(resource) instanceof Float) {
                 attributes.put(fieldName, Double.parseDouble(String.valueOf(field.get(resource))));
             } else if (field.get(resource) instanceof Long) {
